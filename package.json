@@ -1,4 +1,7 @@
 {
+	"scripts": {
+  		"start": "node server.js"
+	},
 	"name": "top100-api",
 	"main": "server,js",
 	"dependencies": {

@@ -13,7 +13,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;        // set our port
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;        // set our port
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1' // set our ip
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -30,12 +31,11 @@ router.get('/songs', function(req, res) {
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
 app.use('/', router);
 // SERVER HTML -------------------------------
 app.use(express.static('public'));
 
 // START THE SERVER
 // =============================================================================
-app.listen(port);
+app.listen(port, server_ip_address);
 console.log('Magic happens on port ' + port);
