@@ -1,0 +1,15 @@
+<div layout-gt-xs="row" layout-wrap layout-align="center">
+  <md-card flex="auto" flex-sm="45" flex-gt-sm="30" ng-repeat="song in songs" class="animated bounceInUp" id="element{{$index}}">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-title">{{song.place}} {{song.title}}</span>
+        <span class="md-subhead">{{song.artist}}</span>
+      </md-card-title-text>
+      <md-card-title-media>
+        <div class="md-media-sm card-media">
+          <img ng-src="{{song.img}}" style="border: 1px dashed">
+        </div>
+      </md-card-title-media>
+    </md-card-title>
+  </md-card>
+</div>
